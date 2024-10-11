@@ -14,14 +14,19 @@ function App() {
 
 
 function AddItem(props) {
-  const value = props.text;
 
   return (
     <form>
       <label for="text-form">Type something: </label>
-      <input type="text" value={value} id="text-form" />
+      <input type="text" value={props.text} id="text-form" />
+      <p>{props.number}</p>
     </form>
   );
 }
+
+AddItem.defaultProps = {
+  number: 2,
+  text: "default"
+};
 
 export default App;

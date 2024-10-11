@@ -1,26 +1,27 @@
-import './App.css';
-import Info from "./Info.js"
+import "./App.css";
+import Info from "./Info.js";
 
 function App() {
   return (
     <div className="App">
       <Info />
-      <AddItem />
-      <AddItem />
+      <AddItem text="Ryan" number={2}/>
+      <AddItem text ="Joe" />
       <AddItem />
     </div>
   );
 }
 
-function AddItem(){
-  const value = "Hi"
+
+function AddItem(props) {
+  const value = props.text;
 
   return (
     <form>
       <label for="text-form">Type something: </label>
-      <input type ="text" value={value} id="text-form" />
+      <input type="text" value={value} id="text-form" />
     </form>
-  )
+  );
 }
 
 export default App;

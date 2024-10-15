@@ -1,5 +1,4 @@
 import "./App.css";
-import { PropTypes } from "prop-types";
 import Info from "./Info.js";
 import { useState } from "react";
 
@@ -26,12 +25,18 @@ function ButtonState() {
 
   return (
     <div>
-    <p>Title: {title}</p>
-    <p>Counter: {count}</p>
+      <Data title={title} count={count}/>
     <button onClick={updateTitleClicked}>Update Title</button>
     <button onClick={updateCounterClicked}>Update Counter</button>
     </div>
   );
+}
+
+function Data(props) {
+  return (<div>
+    <p>Title: {props.title}</p>
+    <p>Count: {props.count}</p>
+  </div>)
 }
 
 export default App;

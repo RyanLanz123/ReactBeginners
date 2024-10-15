@@ -1,11 +1,12 @@
 import "./App.css";
+import { PropTypes } from "prop-types";
 import Info from "./Info.js";
 
 function App() {
   return (
     <div className="App">
-      <Info />
-      <AddItem text="Ryan" number={2}/>
+      <Info title= "Inventory "/>
+      <AddItem text={2} number={"hello"}/>
       <AddItem text ="Joe" />
       <AddItem />
     </div>
@@ -28,5 +29,10 @@ AddItem.defaultProps = {
   number: 2,
   text: "default"
 };
+
+AddItem.propTypes = {
+  number: PropTypes.number,
+  text: PropTypes.string,
+}
 
 export default App;

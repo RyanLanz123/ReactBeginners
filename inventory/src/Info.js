@@ -1,8 +1,15 @@
 import React from "react";
+import { PropTypes } from "prop-types";
 
 class Info extends React.Component {
-    render(){
-        const title = "Welcome"
+  constructor(props){
+    super(props);
+    console.log(props);
+  }
+
+
+    render() {
+        const title = this.props.title;
         const showTitle = true;
   
         if (showTitle){
@@ -17,5 +24,14 @@ class Info extends React.Component {
         } 
       }
     }
+
+    Info.defaultProps = {
+      title: "Default",
+    };
+
+    Info.propTypes = {
+      title: PropTypes.string,
+    };
+    
 
 export default Info;

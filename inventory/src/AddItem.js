@@ -27,7 +27,7 @@ function AddItem(props) {
                 <input id="type-field" type="text" value={type} onChange={ (e) => setType(e.target.value)} />
                 <label for= "brand-field">Brand:</label>
                 <input id="brand-field" type="text" value={brand} onChange={ (e) => setBrand(e.target.value)} />
-                <button type="button" onClick={addItemButtonPressed}>Search</button>
+                <button type="button" onClick={addItemButtonPressed}>Add</button>
             </form>
         </div>
     )

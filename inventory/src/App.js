@@ -23,11 +23,12 @@ function App() {
       }, 
       body: JSON.stringify(item),
     }
-    fetch("http://localhost:3000/items", requestOptions);
+    fetch("http://localhost:3000/items", requestOptions)
+    .then((response) => response.json())
+    .then((data) => console.log(data));
 
     items.push(item);
     setData({items: items});
-    console.log(data);
   }
 
   const filterData = (data) => {

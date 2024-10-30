@@ -13,6 +13,13 @@
       "price": 0,
       "type": "",
       "brand": ""
+    },
+    {
+      "id": 0,
+      "name": "",
+      "price": 0,
+      "type": "",
+      "brand": ""
     }
   ]
 }

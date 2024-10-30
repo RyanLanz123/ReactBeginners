@@ -15,9 +15,49 @@ function App() {
   const addItemToData = (item) => {
     let items = data["items"];
     item.id = items.length;
+
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/JSON",
+      }, 
+      body: JSON.stringify(item),
+    }
+    fetch("http://localhost:3000/items", requestOptions);
+
     items.push(item);
     setData({items: items});
     console.log(data);
+  }
+
+  const filterData = (data) => {
+    const filteredData = [];
+
+    if (!filters.name){
+      return data;
+    }
+
+     for (const item of data) {
+        if (filters.name !== "" && item.name !== filters.name) {
+          continue;
+        }
+
+        if (filters.price !== "" && item.price > filters.price) {
+          continue;
+        }
+
+        if (filters.type !== "" && item.type !== filters.type) {
+          continue;
+        }
+
+        if (filters.brand !== "" && item.brand > filters.brand) {
+          continue;
+      }
+
+      filterData.push(item);
+     }
+
+    return filteredData;
   }
 
   return (

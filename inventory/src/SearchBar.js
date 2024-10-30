@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-
 function SearchBar(props) {
     const [name, setName] = useState("");
     const [price, setPrice] = useState(0);
@@ -8,7 +7,7 @@ function SearchBar(props) {
     const [brand, setBrand] = useState("");
 
     const searchButtonPressed = () => {
-        props.updateSearchParams({name: name, price: price, type: type, brand: brand})
+        props.updateSearchParams({ name, price, type, brand });
     }
 
     return (
@@ -16,54 +15,59 @@ function SearchBar(props) {
             <div className="row">
                 <h2>Search For An Item</h2>
             </div>
-                <div className="row">
-                    <div className="col">
-                        <label for= "name-field">Name:</label>
-                        <input 
+            <div className="row">
+                <div className="col">
+                    <label htmlFor="name-field">Name:</label>
+                    <input 
                         id="name-field" 
                         type="text" 
                         className="form-control"
                         value={name} 
-                        onChange={ (e) => setName(e.target.value)} />
-                    </div>
-                    <div className="col">
-                        <label for= "name-field">Name:</label>
-                        <input 
-                        id="name-field" 
+                        onChange={(e) => setName(e.target.value)} 
+                    />
+                </div>
+                <div className="col">
+                    <label htmlFor="price-field">Max Price:</label>
+                    <input 
+                        id="price-field" 
                         type="text"
                         className="form-control" 
-                        value={name} 
-                        onChange={ (e) => setName(e.target.value)} />
-                    </div>
-                    <div className="col">
-                        <label for= "type-field">Type:</label>
-                        <input 
+                        value={price} 
+                        onChange={(e) => setPrice(e.target.value)} 
+                    />
+                </div>
+                <div className="col">
+                    <label htmlFor="type-field">Type:</label>
+                    <input 
                         id="type-field" 
                         type="text" 
                         className="form-control"
                         value={type} 
-                        onChange={ (e) => setType(e.target.value)} />
-                    </div>
-                    <div className="col">
-                        <label for= "brand-field">Brand:</label>
-                        <input 
+                        onChange={(e) => setType(e.target.value)} 
+                    />
+                </div>
+                <div className="col">
+                    <label htmlFor="brand-field">Brand:</label>
+                    <input 
                         id="brand-field" 
                         type="text" 
                         className="form-control"
                         value={brand} 
-                        onChange={ (e) => setBrand(e.target.value)} />
-                    </div>
+                        onChange={(e) => setBrand(e.target.value)} 
+                    />
                 </div>
-                <div className="row mt-3">
-                    <div className="col-4" />
-                    <button 
-                        type="button" 
-                        className="col-4 btn btn-primary" 
-                        onClick={searchButtonPressed}>Search
-                    </button>
-                </div>
+            </div>
+            <div className="row mt-3">
+                <div className="col-4" />
+                <button 
+                    type="button" 
+                    className="col-4 btn btn-primary" 
+                    onClick={searchButtonPressed}>
+                    Search
+                </button>
+            </div>
         </div>
-    )
+    );
 }
 
 export default SearchBar;

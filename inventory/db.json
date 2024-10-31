@@ -1,32 +1,11 @@
 {
   "items": [
     {
-      "id": "0",
-      "name": "test"
-    },
-    {
-      "id": "a365"
-    },
-    {
-      "id": "1",
-      "name": "",
-      "price": 0,
-      "type": "",
-      "brand": ""
-    },
-    {
-      "id": "0",
-      "name": "",
-      "price": 0,
-      "type": "",
-      "brand": ""
-    },
-    {
       "id": 0,
-      "name": "",
-      "price": 0,
-      "type": "",
-      "brand": ""
+      "name": "Cookies",
+      "price": "1.99",
+      "type": "2 Pack",
+      "brand": "Cadburys"
     }
   ]
 }

@@ -3,6 +3,7 @@ import "./App.css";
 import SearchBar from "./SearchBar";
 import AddItem from "./AddItem";
 import ItemsDisplay from "./ItemsDisplay";
+import Test from "./Class";
 
 function App() {
   const [filters, setFilters] = useState({});
@@ -72,6 +73,7 @@ function App() {
       <div className="row mt-3">
         <AddItem addItem={addItemToData}/>
       </div>
+      <Test />
     </div>
   );
 }

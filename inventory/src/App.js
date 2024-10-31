@@ -8,6 +8,7 @@ import Test from "./Class";
 function App() {
   const [filters, setFilters] = useState({});
   const [data, setData] = useState({ items: [] });
+  const [showTest, setShowTest] = useState(true);
 
   const updateFilters = (searchParams) => {
     setFilters (searchParams);
@@ -73,7 +74,7 @@ function App() {
       <div className="row mt-3">
         <AddItem addItem={addItemToData}/>
       </div>
-      <Test />
+      {showTest ? <Test destroy={setShowTest}/> : null}
     </div>
   );
 }
